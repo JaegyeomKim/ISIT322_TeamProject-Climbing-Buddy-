@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/save_and_reset_climb.xml" value="0.3223958333333333" />
+        <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/start_climb.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/stop_climb.xml" value="0.30833333333333335" />
+        <entry key="..\:/Users/besta/Desktop/322/repos/ClimbingBuddy/app/src/main/res/layout/activity_main.xml" value="0.2651975683890577" />
+        <entry key="..\:/Users/jaegy/Documents/GitHub/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/jaegy/Documents/GitHub/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/fragment_infor_button.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
