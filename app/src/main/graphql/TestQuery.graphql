@@ -1,0 +1,14 @@
+query MyQuery {
+    areas(sort: {}, filter: {area_name: {match: "orange"}}) {
+        id
+        area_name
+        metadata {
+            lng
+            lat
+        }
+        totalClimbs
+        content {
+            description
+        }
+    }
+}

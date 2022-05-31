@@ -1,0 +1,243 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+union TagEntryResult = AreaTag | ClimbTag
+
+type AggregateType {
+    byDiscipline: CountByDisciplineType
+    byGrade: [CountByGroupType]
+    byGradeBand: CountByGradeBand
+}
+
+"A climbing area, wall or crag"
+type Area {
+    aggregate: AggregateType
+    ancestors: [String]!
+    areaName: String!
+    area_name: String!
+    children: [Area]
+    climbs: [Climb]
+    content: AreaContent
+    density: Float!
+    id: ID!
+    media: [MediaTagType]
+    metadata: AreaMetadata!
+    pathHash: String!
+    pathTokens: [String]!
+    totalClimbs: Int!
+    uuid: ID!
+}
+
+type AreaContent {
+    description: String
+}
+
+type AreaMetadata {
+    areaId: ID!
+    area_id: ID!
+    bbox: [Float]!
+    lat: Float!
+    leaf: Boolean!
+    leftRightIndex: Int!
+    left_right_index: Int!
+    lng: Float!
+    mp_id: String!
+}
+
+"A tag linking the media with an area"
+type AreaTag {
+    area: Area!
+    destType: Int!
+    mediaType: Int!
+    mediaUrl: String!
+    mediaUuid: ID!
+}
+
+"A climbing route or a boulder problem"
+type Climb {
+    ancestors: [String!]!
+    content: Content!
+    fa: String!
+    id: ID!
+    media: [MediaTagType]
+    metadata: ClimbMetadata!
+    name: String!
+    pathTokens: [String!]!
+    safety: SafetyEnum!
+    type: ClimbType!
+    uuid: ID!
+    yds: String!
+}
+
+type ClimbMetadata {
+    climbId: ID!
+    climb_id: ID!
+    lat: Float
+    leftRightIndex: Int
+    left_right_index: Int
+    lng: Float
+    mp_id: String
+}
+
+"A tag linking the media with a climb"
+type ClimbTag {
+    climb: Climb!
+    destType: Int!
+    mediaType: Int!
+    mediaUrl: String!
+    mediaUuid: ID!
+}
+
+type ClimbType {
+    aid: Boolean
+    alpine: Boolean
+    bouldering: Boolean
+    mixed: Boolean
+    sport: Boolean
+    tr: Boolean
+    trad: Boolean
+}
+
+type Content {
+    description: String
+    location: String
+    protection: String
+}
+
+type CountByDisciplineType {
+    aid: DisciplineStatsType
+    alpine: DisciplineStatsType
+    boulder: DisciplineStatsType
+    mixed: DisciplineStatsType
+    sport: DisciplineStatsType
+    tr: DisciplineStatsType
+    trad: DisciplineStatsType
+}
+
+type CountByGradeBand {
+    advance: Int
+    beginner: Int
+    expert: Int
+    intermediate: Int
+}
+
+type CountByGroupType {
+    count: Int
+    label: String
+}
+
+type CragsNear {
+    _id: ID!
+    count: Int!
+    crags: [Area]
+    placeId: String!
+}
+
+type DeleteTagResult {
+    destinationId: ID!
+    mediaUuid: ID!
+    removed: Boolean!
+}
+
+type DisciplineStatsType {
+    bands: CountByGradeBand!
+    total: Int!
+}
+
+"A tag linking the media with a climb or an area"
+type MediaTagType {
+    destType: Int!
+    destination: ID!
+    mediaType: Int!
+    mediaUrl: String!
+    mediaUuid: ID!
+}
+
+type Mutation {
+    removeTag(destinationId: ID!, mediaUuid: ID!): DeleteTagResult
+    setTag(input: MediaInput): TagEntryResult
+}
+
+type Query {
+    area(uuid: ID): Area
+    areas(filter: Filter, sort: Sort): [Area]
+    climb(uuid: ID): Climb
+    cragsNear(includeCrags: Boolean = false, lnglat: Point, maxDistance: Int = 48000, minDistance: Int = 0, placeId: String): [CragsNear]
+    getTagsByMediaIdList(uuidList: [ID]): [TagEntryResult]
+    stats: Stats
+}
+
+type Stats {
+    totalClimbs: Int!
+    totalCrags: Int!
+}
+
+enum CompareType {
+    eq
+    gt
+    lt
+}
+
+enum Field {
+    density
+    totalClimbs
+}
+
+enum SafetyEnum {
+    PG
+    PG13
+    R
+    UNSPECIFIED
+    X
+}
+
+input AreaFilter {
+    exactMatch: Boolean
+    match: String!
+}
+
+input ComparisonFilter {
+    comparison: CompareType
+    field: Field
+    num: Float
+}
+
+input Filter {
+    area_name: AreaFilter
+    field_compare: [ComparisonFilter]
+    leaf_status: LeafFilter
+    path_tokens: PathFilter
+}
+
+input LeafFilter {
+    isLeaf: Boolean!
+}
+
+input MediaInput {
+    destType: Int!
+    destinationId: ID!
+    mediaType: Int!
+    mediaUrl: String!
+    mediaUuid: ID!
+}
+
+input PathFilter {
+    exactMatch: Boolean
+    size: Int
+    tokens: [String]!
+}
+
+input Point {
+    lat: Float
+    lng: Float
+}
+
+input Sort {
+    area_name: Int
+    density: Int
+    totalClimbs: Int
+}
