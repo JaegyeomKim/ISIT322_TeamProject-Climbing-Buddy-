@@ -1,0 +1,14 @@
+query AreaByNameQuery {
+    areas(sort: {}, filter: {area_name: {match: "smith"}}) {
+        content {
+            description
+        }
+        metadata {
+            lng
+            lat
+        }
+        totalClimbs
+        id
+        area_name
+    }
+}
