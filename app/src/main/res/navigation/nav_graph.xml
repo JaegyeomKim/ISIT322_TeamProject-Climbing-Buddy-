@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.hfad.climbingbuddy.TitleFragment"
+        android:label="TitleFragment" >
+        <action
+            android:id="@+id/action_titleFragment_to_inforButtonFragment"
+            app:destination="@id/inforButtonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inforButtonFragment"
+        android:name="com.hfad.climbingbuddy.InforButtonFragment"
+        android:label="InforButtonFragment" >
+        <action
+            android:id="@+id/action_inforButtonFragment_to_startClimbFragment"
+            app:destination="@id/startClimbFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/stopFragment"
+        android:name="com.hfad.climbingbuddy.StopFragment"
+        android:label="StopFragment" >
+        <action
+            android:id="@+id/action_stopFragment_to_saveAndResetFragment"
+            app:destination="@id/saveAndResetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveAndResetFragment"
+        android:name="com.hfad.climbingbuddy.SaveAndResetFragment"
+        android:label="SaveAndResetFragment" />
+    <fragment
+        android:id="@+id/startClimbFragment"
+        android:name="com.hfad.climbingbuddy.StartClimbFragment"
+        android:label="fragment_start_climb"
+        tools:layout="@layout/fragment_start_climb" >
+        <action
+            android:id="@+id/action_startClimbFragment_to_stopFragment"
+            app:destination="@id/stopFragment" />
+    </fragment>
+</navigation>
