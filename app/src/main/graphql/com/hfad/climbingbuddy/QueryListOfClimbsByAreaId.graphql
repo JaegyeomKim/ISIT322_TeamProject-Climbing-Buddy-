@@ -1,8 +1,0 @@
-query QueryListOfClimbsByAreaId($id:ID!) {
-    area(uuid: $id){
-        climbs {
-            name
-            uuid
-        }
-    }
-}
