@@ -5,7 +5,6 @@ query QueryByClimbId($id:ID!) {
             location
         }
         name
-        uuid
         metadata {
             lat
             lng
