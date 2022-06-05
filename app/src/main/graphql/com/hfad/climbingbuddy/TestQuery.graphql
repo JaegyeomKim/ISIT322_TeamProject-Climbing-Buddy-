@@ -12,6 +12,9 @@ query TestQuery {
         climbs {
             name
             uuid
+            metadata {
+                mp_id
+            }
         }
     }
 }
