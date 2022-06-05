@@ -1,6 +1,6 @@
-query MyQuery {
-    areas(sort: {}, filter: {area_name: {match: "orange"}}) {
-        id
+query QueryAreaById($id:ID!) {
+    area(uuid: $id) {
+        uuid
         area_name
         metadata {
             lng

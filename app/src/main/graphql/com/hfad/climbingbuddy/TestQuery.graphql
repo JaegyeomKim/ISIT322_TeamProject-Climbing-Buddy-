@@ -1,0 +1,18 @@
+query TestQuery {
+    area(uuid:"cc0df199-8b07-5b21-820e-fa9c8044b3bb"){
+        id
+        area_name
+        metadata {
+            lng
+            lat
+        }
+        totalClimbs
+        content {
+            description
+        }
+        climbs {
+            name
+            uuid
+        }
+    }
+}
