@@ -8,72 +8,48 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/homeButton3"
         android:layout_width="81dp"
         android:layout_height="65dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="161dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/resetButton"
         android:layout_width="170dp"
         android:layout_height="62dp"
         android:layout_marginStart="55dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="14dp"
         android:text="Reset Climb"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.585"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextTime"
-        app:layout_constraintVertical_bias="0.256" />
+        app:layout_constraintTop_toBottomOf="@+id/TimeEnd" />
 
-    <TextClock
-        android:id="@+id/TextTime"
-        android:layout_width="369dp"
+    <Chronometer
+        android:id="@+id/TimeEnd"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="time"
-        android:text="00:00:00"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="275dp" />
+        android:layout_marginTop="148dp"
+        android:textSize="56sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/saveButton"
         android:layout_width="160dp"
         android:layout_height="65dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="161dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginBottom="308dp"
         android:text="Save Climb"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="126dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="254dp"
-        android:text="New Ascent"
-        app:layout_constraintBottom_toTopOf="@+id/TextTime"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
