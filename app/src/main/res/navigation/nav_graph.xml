@@ -1,74 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/titleFragment2">
-
-
+    app:startDestination="@id/titleFragment">
     <fragment
-        android:id="@+id/titleFragment2"
+        android:id="@+id/titleFragment"
         android:name="com.hfad.climbingbuddy.TitleFragment"
-        android:label="TitleFragment" >
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
         <action
-            android:id="@+id/action_titleFragment2_to_inforButtonFragment2"
+            android:id="@+id/action_titleFragment_to_inforButtonFragment2"
             app:destination="@id/inforButtonFragment2" />
     </fragment>
     <fragment
         android:id="@+id/inforButtonFragment2"
         android:name="com.hfad.climbingbuddy.InforButtonFragment"
-        android:label="InforButtonFragment" >
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_inforButtonFragment2_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            android:id="@+id/action_inforButtonFragment2_to_searchFragment2"
+            app:destination="@id/searchFragment2" />
         <action
             android:id="@+id/action_inforButtonFragment2_to_pastAscentsFragment"
             app:destination="@id/pastAscentsFragment" />
-        <action
-            android:id="@+id/action_inforButtonFragment2_to_startClimbFragment"
-            app:destination="@id/startClimbFragment" />
     </fragment>
     <fragment
-        android:id="@+id/searchFragment"
+        android:id="@+id/searchFragment2"
         android:name="com.hfad.climbingbuddy.SearchFragment"
-        android:label="SearchFragment" >
+        android:label="fragment_search_area"
+        tools:layout="@layout/fragment_search_area" >
         <action
-            android:id="@+id/action_searchFragment_to_areaInfoFragment"
-            app:destination="@id/areaInfoFragment" />
+            android:id="@+id/action_searchFragment2_to_startClimbFragment2"
+            app:destination="@id/startClimbFragment2" />
+        <action
+            android:id="@+id/action_searchFragment2_to_inforButtonFragment2"
+            app:destination="@id/inforButtonFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/areaInfoFragment"
-        android:name="com.hfad.climbingbuddy.AreaInfoFragment"
-        android:label="AreaInfoFragment" />
+        android:id="@+id/startClimbFragment2"
+        android:name="com.hfad.climbingbuddy.StartClimbFragment"
+        android:label="fragment_start_climb"
+        tools:layout="@layout/fragment_start_climb" >
+        <action
+            android:id="@+id/action_startClimbFragment2_to_inforButtonFragment2"
+            app:destination="@id/inforButtonFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/pastAscentsFragment"
         android:name="com.hfad.climbingbuddy.PastAscentsFragment"
-        android:label="PastAscentsFragment" >
+        android:label="fragment_past_ascents_list"
+        tools:layout="@layout/fragment_past_ascents_list" >
         <action
-            android:id="@+id/action_pastAscentsFragment_to_infoFragment"
-            app:destination="@id/infoFragment" />
+            android:id="@+id/action_pastAscentsFragment_to_inforButtonFragment2"
+            app:destination="@id/inforButtonFragment2" />
+        <action
+            android:id="@+id/action_pastAscentsFragment_to_pastAscentInfoFragment"
+            app:destination="@id/pastAscentInfoFragment" />
     </fragment>
     <fragment
-        android:id="@+id/startClimbFragment"
-        android:name="com.hfad.climbingbuddy.StartClimbFragment"
-        android:label="StartClimbFragment" >
+        android:id="@+id/pastAscentInfoFragment"
+        android:name="com.hfad.climbingbuddy.PastAscentInfoFragment"
+        android:label="fragment_past_ascent_info"
+        tools:layout="@layout/fragment_past_ascent_info" >
         <action
-            android:id="@+id/action_startClimbFragment_to_stopFragment"
-            app:destination="@id/stopFragment" />
+            android:id="@+id/action_pastAscentInfoFragment_to_inforButtonFragment2"
+            app:destination="@id/inforButtonFragment2" />
     </fragment>
-    <fragment
-        android:id="@+id/stopFragment"
-        android:name="com.hfad.climbingbuddy.StopFragment"
-        android:label="StopFragment" >
-        <action
-            android:id="@+id/action_stopFragment_to_saveAndResetFragment"
-            app:destination="@id/saveAndResetFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/saveAndResetFragment"
-        android:name="com.hfad.climbingbuddy.SaveAndResetFragment"
-        android:label="SaveAndResetFragment" />
-    <fragment
-        android:id="@+id/infoFragment"
-        android:name="com.hfad.climbingbuddy.InfoFragment"
-        android:label="InfoFragment" />
 </navigation>

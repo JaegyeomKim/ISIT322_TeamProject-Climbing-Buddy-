@@ -13,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [SaveAndResetFragment.newInstance] factory method to
+ * Use the [PastAscentInfoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SaveAndResetFragment : Fragment() {
+class PastAscentInfoFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +34,7 @@ class SaveAndResetFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_save_and_reset, container, false)
+        return inflater.inflate(R.layout.fragment_past_ascent_info, container, false)
     }
 
     companion object {
@@ -44,12 +44,12 @@ class SaveAndResetFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment SaveAndResetFragment.
+         * @return A new instance of fragment PastAscentInfoFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            SaveAndResetFragment().apply {
+            PastAscentInfoFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
