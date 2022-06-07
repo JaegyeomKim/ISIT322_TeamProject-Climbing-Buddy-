@@ -3,20 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/activity_main.xml" value="0.3223958333333333" />
-        <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/fragment_infor_button.xml" value="0.22" />
-        <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/fragment_save_and_reset.xml" value="0.22" />
-        <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/fragment_start.xml" value="0.22" />
-        <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/fragment_stop.xml" value="0.22" />
-        <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/fragment_title.xml" value="0.3223958333333333" />
         <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/save_and_reset_climb.xml" value="0.3223958333333333" />
         <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/start_climb.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Yasii/OneDrive/Documents/ISIT 322/AndroidStudio/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/stop_climb.xml" value="0.30833333333333335" />
         <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/activity_main.xml" value="0.2028985507246377" />
         <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/fragment_infor_button.xml" value="0.2028985507246377" />
+        <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/fragment_new_save_and_reset.xml" value="0.4390625" />
+        <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/fragment_new_start_climb.xml" value="0.4390625" />
+        <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/fragment_save_and_reset.xml" value="0.4390625" />
+        <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/fragment_start_climb.xml" value="0.425" />
+        <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/fragment_stop.xml" value="0.425" />
         <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/fragment_title.xml" value="0.2028985507246377" />
         <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/save_and_reset_climb.xml" value="0.2028985507246377" />
-        <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/start_climb.xml" value="0.2028985507246377" />
+        <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/start_climb.xml" value="0.5" />
         <entry key="..\:/Users/besta/Desktop/322/ISIT322TeamProjectClimbingBuddy/app/src/main/res/layout/stop_climb.xml" value="0.2028985507246377" />
         <entry key="..\:/Users/besta/Desktop/322/repos/ClimbingBuddy/app/src/main/res/layout/activity_main.xml" value="0.2651975683890577" />
         <entry key="..\:/Users/jaegy/Documents/GitHub/ISIT322_TeamProject-Climbing-Buddy-/app/src/main/res/layout/activity_main.xml" value="0.3625" />
