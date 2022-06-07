@@ -1,0 +1,13 @@
+query QueryByClimbId($id:ID!) {
+    climb(uuid: $id) {
+        content {
+            description
+            location
+        }
+        name
+        metadata {
+            lat
+            lng
+        }
+    }
+}

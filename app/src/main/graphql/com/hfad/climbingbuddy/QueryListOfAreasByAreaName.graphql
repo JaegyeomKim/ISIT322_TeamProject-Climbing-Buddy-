@@ -1,0 +1,11 @@
+query QueryListOfAreasByAreaName($queryString:String!) {
+    #    Not Case Sensitive area_name
+    areas(filter: {area_name: {match: $queryString}}) {
+        uuid
+        area_name
+        metadata {
+            lng
+            lat
+        }
+    }
+}
