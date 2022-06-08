@@ -21,17 +21,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        lifecycleScope.launchWhenResumed {
-            //val apolloClient = ApolloClient.Builder().serverUrl("https://api.openbeta.io").build()
-            //val response = apolloClient().query(TestQuery()).execute()
-            val response = try {
-                apolloClient().query(TestQuery()).execute()
-            } catch (e: ApolloException) {
-                Log.d("LaunchList", "Failure", e)
-                return@launchWhenResumed
-            }
-            val r = response
-        }
+//        lifecycleScope.launchWhenResumed {
+//            //val apolloClient = ApolloClient.Builder().serverUrl("https://api.openbeta.io").build()
+//            //val response = apolloClient().query(TestQuery()).execute()
+//            val response = try {
+//                apolloClient().query(TestQuery()).execute()
+//            } catch (e: ApolloException) {
+//                Log.d("LaunchList", "Failure", e)
+//                return@launchWhenResumed
+//            }
+//            val r = response
+//        }
     }
 
 

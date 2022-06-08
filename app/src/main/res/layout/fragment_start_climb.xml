@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/resetButton"
         android:layout_width="170dp"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="58dp"
         android:text="Reset Timer"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,7 @@
     <Button
         android:id="@+id/saveButton"
         android:layout_width="170dp"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="81dp"
         android:text="Save Climb"
         app:layout_constraintBottom_toTopOf="@+id/resetButton"
@@ -32,7 +32,7 @@
     <Button
         android:id="@+id/stopButton"
         android:layout_width="170dp"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="26dp"
         android:text="Stop Climb"
         app:layout_constraintBottom_toTopOf="@+id/saveButton"
@@ -42,8 +42,8 @@
 
     <Button
         android:id="@+id/homeButton1"
-        android:layout_width="0dp"
-        android:layout_height="65dp"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="15dp"
@@ -55,7 +55,7 @@
     <Button
         android:id="@+id/startButton"
         android:layout_width="170dp"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="22dp"
         android:text="Start Climb"
         app:layout_constraintBottom_toTopOf="@+id/stopButton"
@@ -65,10 +65,9 @@
 
     <Chronometer
         android:id="@+id/TimeStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:layout_marginTop="148dp"
-        android:layout_marginBottom="73dp"
         android:textSize="56sp"
         app:layout_constraintBottom_toTopOf="@+id/startButton"
         app:layout_constraintEnd_toEndOf="parent"
