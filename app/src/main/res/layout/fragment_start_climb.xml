@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/resetButton"
         android:layout_width="170dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="58dp"
         android:text="Reset Timer"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,7 @@
     <Button
         android:id="@+id/saveButton"
         android:layout_width="170dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="81dp"
         android:text="Save Climb"
         app:layout_constraintBottom_toTopOf="@+id/resetButton"
@@ -32,7 +32,7 @@
     <Button
         android:id="@+id/stopButton"
         android:layout_width="170dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="26dp"
         android:text="Stop Climb"
         app:layout_constraintBottom_toTopOf="@+id/saveButton"
@@ -43,19 +43,20 @@
     <Button
         android:id="@+id/homeButton1"
         android:layout_width="80dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="15dp"
         android:text="Home"
         app:layout_constraintEnd_toStartOf="@+id/TimeStart"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="170dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="22dp"
         android:text="Start Climb"
         app:layout_constraintBottom_toTopOf="@+id/stopButton"
