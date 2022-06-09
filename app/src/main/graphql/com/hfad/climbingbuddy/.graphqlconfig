@@ -1,10 +1,10 @@
 {
   "name": "Climbing GraphQL Schema",
-  "schemaPath": "schema.graphql",
+  "schemaPath": "schema.graphqls",
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {
-        "url": "https://api.openbeta.io/",
+        "url": "https://api.openbeta.io",
         "headers": {
           "user-agent": "JS GraphQL"
         },

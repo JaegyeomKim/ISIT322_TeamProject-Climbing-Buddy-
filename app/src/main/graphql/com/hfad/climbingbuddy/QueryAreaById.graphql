@@ -1,0 +1,17 @@
+query QueryAreaById($id:ID!) {
+    area(uuid: $id) {
+        area_name
+        metadata {
+            lng
+            lat
+        }
+        totalClimbs
+        content {
+            description
+        }
+        climbs {
+            name
+            uuid
+        }
+    }
+}

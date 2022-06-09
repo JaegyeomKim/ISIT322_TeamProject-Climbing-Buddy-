@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/climbingFragment">
+
+    <fragment
+        android:id="@+id/climbingFragment"
+        android:name="com.hfad.climbingbuddy.ClimbingFragment"
+        android:label="fragment_climbing"
+        tools:layout="@layout/fragment_climbing" >
+        <action
+            android:id="@+id/action_climbingFragment_to_areaFragment"
+            app:destination="@id/areaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/areaFragment"
+        android:name="com.hfad.climbingbuddy.AreaFragment"
+        android:label="fragment_area"
+        tools:layout="@layout/fragment_area" />
+</navigation>

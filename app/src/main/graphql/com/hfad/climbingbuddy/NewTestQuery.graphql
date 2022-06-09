@@ -1,0 +1,15 @@
+query NewTestQuery {
+    #    Case Sensitive area_name
+    areas(filter: {area_name: {exactMatch: true, match: "(2) Orange Wall"}}) {
+        uuid
+        area_name
+        metadata {
+            lng
+            lat
+        }
+        totalClimbs
+        content {
+            description
+        }
+    }
+}

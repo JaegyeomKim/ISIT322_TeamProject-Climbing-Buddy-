@@ -1,0 +1,6 @@
+query MyQuery {
+    areas{
+        uuid
+        area_name
+    }
+}
