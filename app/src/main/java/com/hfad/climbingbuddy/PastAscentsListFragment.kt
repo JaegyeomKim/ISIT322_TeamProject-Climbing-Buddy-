@@ -37,13 +37,11 @@ class PastAscentsListFragment : Fragment() {
                 .navigate(R.id.action_pastAscentsListFragment_to_homeFragment)
         }
 
-
         val areaButton = view.findViewById<Button>(R.id.viewInfoButton)
         areaButton.setOnClickListener {
             view.findNavController()
-                .navigate(R.id.action_pastAscentsListFragment_to_climbingFragment)
+                .navigate(R.id.action_pastAscentsListFragment_to_testFragment)
         }
-
 
         return view
     }

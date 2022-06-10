@@ -30,8 +30,6 @@ class SearchAreaFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
 
-
-
         val homeButton = view.findViewById<Button>(R.id.homeButton8)
         val areaSearchButton = view.findViewById<Button>(R.id.button4)
         val climbStartButton = view.findViewById<Button>(R.id.newClimbButton)

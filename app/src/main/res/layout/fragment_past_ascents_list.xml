@@ -16,24 +16,34 @@
         android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/homeButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="161dp"
-        android:layout_gravity="left"
-        android:text="Home" />
+        <Button
+            android:id="@+id/homeButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="left"
+            android:text="Home" />
 
-    <Button
-        android:id="@+id/viewInfoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_gravity="right"
-        android:text="View Info" />
+        <TextView
+            android:id="@+id/tasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="left"
+            android:layout_marginBottom="30dp"
+            android:text="@{viewModel.tasksString}" />
+
+
+        <Button
+            android:id="@+id/viewInfoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="right"
+            android:text="View Info" />
 
 
     </LinearLayout>

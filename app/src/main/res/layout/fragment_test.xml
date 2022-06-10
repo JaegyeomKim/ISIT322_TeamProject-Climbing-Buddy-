@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ClimbingUserFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.hfad.climbingbuddy.ClimbingUserViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/climbing_TimeSpend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Enter a TimeSpend"
+            android:text="@={viewModel.newTimeSpend}" />
+
+
+        <EditText
+            android:id="@+id/climbing_numFalls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Enter a NumFalls"
+            android:text="@={viewModel.newNumFalls}" />
+
+        <EditText
+            android:id="@+id/climbing_timeStamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Enter a TimeStamp"
+            android:text="@={viewModel.newTimeStamp}" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Save"
+            android:onClick="@{() -> viewModel.addClimbing()}" />
+
+
+    </LinearLayout>
+</layout>
