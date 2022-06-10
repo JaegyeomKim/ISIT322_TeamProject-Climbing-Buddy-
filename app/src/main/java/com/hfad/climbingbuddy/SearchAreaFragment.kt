@@ -6,13 +6,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.hfad.climbingbuddy.databinding.FragmentHomeBinding
+import com.hfad.climbingbuddy.databinding.FragmentSearchAreaBinding
 
 class SearchAreaFragment : Fragment() {
 
+    private var _binding: FragmentSearchAreaBinding? = null
+    private val binding get() = _binding!!
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_search_area, container, false)
+        _binding = FragmentSearchAreaBinding.inflate(inflater, container, false)
+        val view = binding.root
+        val application = requireNotNull(this.activity).application
+        val dao = ClimbingUserDatabase.getInstance(application).climbingUserDao
+        val viewModelFactory = ClimbingUserModelFactory(dao)
+        val viewModel = ViewModelProvider(
+            this, viewModelFactory).get(ClimbingUserViewModel::class.java)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
+
+
 
         val homeButton = view.findViewById<Button>(R.id.homeButton8)
         val areaSearchButton = view.findViewById<Button>(R.id.button4)

@@ -17,15 +17,6 @@
             app:destination="@id/pastAscentsListFragment" />
     </fragment>
     <fragment
-        android:id="@+id/titleFragment"
-        android:name="com.hfad.climbingbuddy.TitleFragment"
-        android:label="fragment_title"
-        tools:layout="@layout/fragment_title" >
-        <action
-            android:id="@+id/action_titleFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/searchAreaFragment"
         android:name="com.hfad.climbingbuddy.SearchAreaFragment"
         android:label="fragment_search_area"
@@ -46,20 +37,8 @@
             android:id="@+id/action_pastAscentsListFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <action
-            android:id="@+id/action_pastAscentsListFragment_to_pastAscentInfoFragment"
-            app:destination="@id/pastAscentInfoFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/pastAscentInfoFragment"
-        android:name="com.hfad.climbingbuddy.PastAscentInfoFragment"
-        android:label="fragment_past_ascent_info"
-        tools:layout="@layout/fragment_past_ascent_info" >
-        <action
-            android:id="@+id/action_pastAscentInfoFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_pastAscentInfoFragment_to_pastAscentsListFragment"
-            app:destination="@id/pastAscentsListFragment" />
+            android:id="@+id/action_pastAscentsListFragment_to_climbingFragment"
+            app:destination="@id/climbingFragment" />
     </fragment>
     <fragment
         android:id="@+id/startClimbFragment"
@@ -69,5 +48,14 @@
         <action
             android:id="@+id/action_startClimbFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/climbingFragment"
+        android:name="com.hfad.climbingbuddy.ClimbingFragment"
+        android:label="fragment_climbing_user"
+        tools:layout="@layout/fragment_climbing_user" >
+        <action
+            android:id="@+id/action_climbingFragment_to_pastAscentsListFragment"
+            app:destination="@id/pastAscentsListFragment" />
     </fragment>
 </navigation>

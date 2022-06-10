@@ -6,15 +6,37 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.hfad.climbingbuddy.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
 
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
+
+
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = binding.root
+        val application = requireNotNull(this.activity).application
+        val dao = ClimbingUserDatabase.getInstance(application).climbingUserDao
+        val viewModelFactory = ClimbingUserModelFactory(dao)
+        val viewModel = ViewModelProvider(
+            this, viewModelFactory).get(ClimbingUserViewModel::class.java)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
+
+
+
+
         //Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         val viewAscentButton = view.findViewById<Button>(R.id.viewAscentsButton)
         val newAscentButton = view.findViewById<Button>(R.id.newAscentButton)
