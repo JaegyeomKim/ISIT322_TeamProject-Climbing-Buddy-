@@ -45,6 +45,16 @@
             android:text="View Area" />
 
         <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Confirm"
+            android:onClick="@{() -> viewModel.createDBAndAddUUID()}"/>
+
+        <Button
             android:id="@+id/newClimbButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

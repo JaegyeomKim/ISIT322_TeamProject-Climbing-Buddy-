@@ -25,7 +25,6 @@
             android:layout_gravity="left"
             android:text="Home" />
 
-
         <Chronometer
             android:id="@+id/TimeStart"
             android:layout_width="wrap_content"
@@ -33,7 +32,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="148dp"
             android:layout_marginBottom="30dp"
-            android:textSize="56sp" />
+            android:textSize="56sp"
+            android:text="@={viewModel.newTimeStamp}"
+            />
 
         <Button
             android:id="@+id/startButton"
@@ -59,7 +60,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="81dp"
             android:layout_gravity="center"
-            android:text="Save Climb" />
+            android:text="Save Climb"
+            android:onClick="@{() -> viewModel.AddTimeSpend()}"/>
 
 
         <Button

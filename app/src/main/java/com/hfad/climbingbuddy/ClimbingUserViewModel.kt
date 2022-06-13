@@ -1,26 +1,32 @@
 package com.hfad.climbingbuddy
 import android.util.Log
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewModelScope
+import android.widget.TextView
+import androidx.lifecycle.*
+import androidx.room.Room
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.exception.ApolloException
 import kotlinx.coroutines.launch
 import com.hfad.climbingbuddy.MainActivity
 
-class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
 
+class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
     var newTimeSpend = ""
     var newNumFalls = ""
     var newTimeStamp = ""
-    var newUUID = "0";
+    var newUUID = "0"
+    var myTestValue = ""
 
     private val climbingDB = dao.getAll()
+    private val climbingDB_getOne = dao.getOne()
 
     val tasksString = Transformations.map(climbingDB) {
             climbingDB -> formatTasks(climbingDB)
     }
+
+    val oneString = Transformations.map(climbingDB_getOne) {
+            climbingDB -> formatTasks2(climbingDB)
+    }
+
 
     fun addClimbing() {
         viewModelScope.launch {
@@ -33,17 +39,7 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
         }
     }
 
-    fun getDataAndAddUUID() {
-        viewModelScope.launch {
-            val response = apolloClient().query(MyQuery()).execute()
-            var r = response.data?.areas?.elementAt(0)?.uuid.toString()
 
-            Thread {
-                val testUUID2 = r
-                dao.updateTest(testUUID2,5)
-            }.start()
-        }
-    }
 
     fun formatTasks(climbing: List<ClimbingUser>): String {
         return climbing.fold("") {
@@ -60,4 +56,45 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
         str += '\n' + "UUID: ${climbing.UUID}" + '\n'
         return str
     }
+
+
+    fun createDBAndAddUUID() {
+        viewModelScope.launch {
+            val response = apolloClient().query(MyQuery()).execute()
+            var r = response.data?.areas?.elementAt(0)?.uuid.toString()
+            val climbing = ClimbingUser()
+            climbing.timeSpend = newTimeSpend
+            climbing.numFalls = newNumFalls
+            climbing.timeStamp = newTimeStamp
+            climbing.UUID = r
+            dao.insert(climbing)
+        }
+
+    }
+
+    fun AddTimeSpend() {
+        viewModelScope.launch {
+            Thread {
+                dao.updateTest(newTimeStamp,32)
+            }.start()
+        }
+    }
+
+
+
+    fun formatTasks2(climbing: List<Int>): String {
+        return climbing.fold("") {
+                str, item -> str + '\n' + formatTask2(item)
+        }
+    }
+
+    fun formatTask2(int: Int): String {
+        var str = "climbID: ${int}" + '\n'
+        return str
+    }
+
+    fun getViewValue() : String{
+        return myTestValue
+    }
+
 }
