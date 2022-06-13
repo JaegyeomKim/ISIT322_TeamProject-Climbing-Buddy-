@@ -57,7 +57,6 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
         return str
     }
 
-
     fun createDBAndAddUUID() {
         viewModelScope.launch {
             val response = apolloClient().query(MyQuery()).execute()
@@ -69,7 +68,6 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
             climbing.UUID = r
             dao.insert(climbing)
         }
-
     }
 
     fun AddTimeSpend() {
@@ -79,8 +77,6 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
             }.start()
         }
     }
-
-
 
     fun formatTasks2(climbing: List<Int>): String {
         return climbing.fold("") {
