@@ -2,7 +2,8 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ClimbingUserFragment">
+    tools:context=".ClimbingUserFragment"
+    android:background="#CBA">
 
     <data>
         <variable
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
-            android:text="Enter Area" />
+            android:hint="Enter Area" />
 
 
         <TextView
