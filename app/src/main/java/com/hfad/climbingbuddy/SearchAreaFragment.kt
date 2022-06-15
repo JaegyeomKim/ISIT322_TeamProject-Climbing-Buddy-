@@ -42,6 +42,8 @@ class SearchAreaFragment : Fragment() {
 
         val areaView = view.findViewById<TextView>(R.id.AreaView)
 
+
+
         val myArray = ArrayList<String>()
         lifecycleScope.launchWhenResumed {
             val response = apolloClient().query(MyQuery()).execute()
@@ -68,6 +70,7 @@ class SearchAreaFragment : Fragment() {
         }
 
         climbStartButton.setOnClickListener {
+
             view.findNavController()
                 .navigate(R.id.action_searchAreaFragment_to_startClimbFragment)
         }

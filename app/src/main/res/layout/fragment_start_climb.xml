@@ -63,16 +63,19 @@
             android:text="Save Climb"
             android:onClick="@{() -> viewModel.AddTimeSpend()}"/>
 
-
         <Button
             android:id="@+id/resetButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="50dp"
             android:layout_gravity="center"
             android:text="Reset Timer" />
 
-
+        <TextView
+            android:id="@+id/tasks2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.oneString}"/>
 
     </LinearLayout>
 </layout>

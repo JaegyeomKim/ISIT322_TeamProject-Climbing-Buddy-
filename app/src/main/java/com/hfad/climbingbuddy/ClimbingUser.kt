@@ -13,7 +13,6 @@ data class ClimbingUser(
     var numFalls: String = "",    // on the app
     @ColumnInfo(name = "climbing_timeStamp")
     var timeStamp: String = "",  // current time value in  app
-
     @ColumnInfo(name = "climbing_arealID")
     var UUID: String = "",    //UUID from API - allow nullable
 )

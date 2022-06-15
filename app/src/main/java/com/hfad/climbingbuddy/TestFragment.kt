@@ -30,14 +30,6 @@ class TestFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
 
-        val testView = view.findViewById<TextView>(R.id.tasks)
-        val check = testView.text.toString()
-
-
-
-        val testView2 = view.findViewById<TextView>(R.id.tasks2)
-        testView2.text = check + "asd"
-
 
         return view
     }

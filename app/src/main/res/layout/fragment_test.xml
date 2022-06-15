@@ -48,16 +48,12 @@
             android:text="Save"
             android:onClick="@{() -> viewModel.addClimbing()}" />
 
-        <TextView
-            android:id="@+id/tasks"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{viewModel.oneString}"/>
 
-        <TextView
-            android:id="@+id/tasks2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+<!--        <TextView-->
+<!--            android:id="@+id/tasks2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@{viewModel.getViewValue()}"/>-->
 
     </LinearLayout>
 </layout>
