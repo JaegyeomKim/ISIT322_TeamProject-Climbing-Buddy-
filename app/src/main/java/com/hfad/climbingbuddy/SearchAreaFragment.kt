@@ -50,14 +50,8 @@ class SearchAreaFragment : Fragment() {
                 val r = response.data?.areas?.elementAt(i)?.area_name.toString()
                 myArray.add(r)
             }
-            areaView.text = myArray[(0..20).random()]
+            areaView.text = myArray[(0..25).random()]
         }
-
-        val areaSearchButton = view.findViewById<Button>(R.id.areaViewButton)
-        areaSearchButton.setOnClickListener {
-
-        }
-
 
         val homeButton = view.findViewById<Button>(R.id.homeButton8)
         val climbStartButton = view.findViewById<Button>(R.id.newClimbButton)
