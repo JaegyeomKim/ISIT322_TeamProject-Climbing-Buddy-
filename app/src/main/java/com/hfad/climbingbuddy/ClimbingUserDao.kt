@@ -9,8 +9,10 @@ interface ClimbingUserDao {
     suspend fun update(climbing: ClimbingUser)
     @Delete
     suspend fun delete(climbing: ClimbingUser)
-    @Query("SELECT * FROM climbingUser_table WHERE climbID = :key")
-    fun get(key: Long): LiveData<ClimbingUser>
+
+    @Query("DELETE FROM climbingUser_table")
+    fun deleteAll()
+
     @Query("SELECT * FROM climbingUser_table ORDER BY climbID DESC")
     fun getAll(): LiveData<List<ClimbingUser>>
     @Query("SELECT * FROM climbingUser_table WHERE climbID = :key")

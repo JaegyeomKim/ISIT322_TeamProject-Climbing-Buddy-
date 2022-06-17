@@ -94,5 +94,15 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
         myID  = int
         return myID
     }
+
+
+    fun deleteAll() {
+        viewModelScope.launch {
+            Thread {
+                dao.deleteAll()
+            }.start()
+        }
+    }
+
 }
 
