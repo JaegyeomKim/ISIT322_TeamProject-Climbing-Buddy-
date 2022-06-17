@@ -26,10 +26,7 @@ interface ClimbingUserDao {
     @Query("SELECT climbingUser_table.climbID FROM climbingUser_table ORDER BY climbID DESC LIMIT 1")
     fun getOne(): LiveData<List<Int>>
 
-
     @Query("SELECT * FROM climbingUser_table")
     fun getTotal(): LiveData<List<ClimbingUser>>
-
-
 
 }

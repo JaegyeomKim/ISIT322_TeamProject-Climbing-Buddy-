@@ -39,7 +39,6 @@ class SearchAreaFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-
         val areaView = view.findViewById<TextView>(R.id.AreaView)
 
 
@@ -47,18 +46,17 @@ class SearchAreaFragment : Fragment() {
         val myArray = ArrayList<String>()
         lifecycleScope.launchWhenResumed {
             val response = apolloClient().query(MyQuery()).execute()
-            for (i in 1..10){
+            for (i in 1..20){
                 val r = response.data?.areas?.elementAt(i)?.area_name.toString()
                 myArray.add(r)
             }
-            areaView.text = myArray[0] + " - " + myArray[9]
+            areaView.text = myArray[(0..20).random()]
         }
 
         val areaSearchButton = view.findViewById<Button>(R.id.areaViewButton)
         areaSearchButton.setOnClickListener {
 
         }
-
 
 
         val homeButton = view.findViewById<Button>(R.id.homeButton8)
