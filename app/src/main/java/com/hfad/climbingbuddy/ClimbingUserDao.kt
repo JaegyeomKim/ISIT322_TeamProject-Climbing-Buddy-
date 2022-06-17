@@ -17,8 +17,10 @@ interface ClimbingUserDao {
     fun getMine(key: Int): LiveData<List<ClimbingUser>>
 
 
-    @Query("Update climbingUser_table SET climbing_TimeSpend = :pTimeSpend WHERE climbID = :id")
-    fun updateTest(pTimeSpend: String, id: Int)
+    @Query("Update climbingUser_table SET climbing_TimeSpend = :pTimeSpend, climbing_timeStamp = :pCurrentTime where climbID = :id")
+    fun updateTest(pTimeSpend: String, pCurrentTime: String, id: Int)
+
+
 
     @Query("SELECT climbingUser_table.climbID FROM climbingUser_table ORDER BY climbID DESC LIMIT 1")
     fun getOne(): LiveData<List<Int>>
@@ -28,4 +30,7 @@ interface ClimbingUserDao {
 
     @Query("SELECT * FROM climbingUser_table")
     fun getTotal(): LiveData<List<ClimbingUser>>
+
+
+
 }

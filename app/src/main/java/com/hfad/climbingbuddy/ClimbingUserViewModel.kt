@@ -1,12 +1,15 @@
 package com.hfad.climbingbuddy
+import android.os.Build
 import android.util.Log
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.*
 import androidx.room.Room
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.exception.ApolloException
 import kotlinx.coroutines.launch
 import com.hfad.climbingbuddy.MainActivity
+import java.time.LocalDateTime
 
 var myID = 0
 
@@ -16,10 +19,12 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
     var newTimeStamp = ""
     var newUUID = "0"
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    val time = LocalDateTime.now().toString()
+
 
     private val climbingDB = dao.getAll()
     private val climbingDB_getOne = dao.getOne()
-
 
     val tasksString = Transformations.map(climbingDB) {
             climbingDB -> formatTasks(climbingDB)
@@ -70,10 +75,11 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun AddTimeSpend() {
         viewModelScope.launch {
             Thread {
-                dao.updateTest(newTimeStamp,myID)
+                dao.updateTest(newTimeStamp,time, myID)
             }.start()
         }
     }
@@ -82,13 +88,11 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
         return climbing.fold("") {
                 str, item -> str + '\n' + formatTask2(item)
         }
-
     }
 
     fun formatTask2(int: Int): Int {
         myID  = int
         return myID
     }
-
 }
 
