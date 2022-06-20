@@ -1,10 +1,12 @@
 package com.hfad.climbingbuddy
 import android.os.Build
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.*
+import androidx.navigation.findNavController
 import androidx.room.Room
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.exception.ApolloException

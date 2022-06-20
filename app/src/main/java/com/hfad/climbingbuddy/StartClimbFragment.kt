@@ -6,6 +6,7 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
@@ -33,12 +35,14 @@ class StartClimbFragment : Fragment(), SensorEventListener {
     var offset: Long = 0
 
     private lateinit var square: TextView
+    private lateinit var or_square: TextView
 
 
     var fallCount: Int = 0
     private lateinit var sensorManager: SensorManager
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -66,6 +70,7 @@ class StartClimbFragment : Fragment(), SensorEventListener {
         val resetButton = view.findViewById<Button>(R.id.resetButton)
         TimeStart = view.findViewById<Chronometer>(R.id.TimeStart)
         square = view.findViewById<TextView>(R.id.test_square)
+        or_square = view.findViewById<TextView>(R.id.or_square)
 
 
 
@@ -73,6 +78,7 @@ class StartClimbFragment : Fragment(), SensorEventListener {
             view.findNavController()
                 .navigate(R.id.action_startClimbFragment_to_homeFragment)
         }
+
 
         startButton.setOnClickListener {
             if (!running) {
@@ -86,14 +92,19 @@ class StartClimbFragment : Fragment(), SensorEventListener {
         }
 
         stopButton.setOnClickListener {
-
             if (running) {
                 TimeStart.stop()
                 running = false
+                saveOffset()
             }
         }
 
         saveButton.setOnClickListener {
+            if (running) {
+                TimeStart.stop()
+                running = false
+            }
+            viewModel.AddTimeSpend()
             saveOffset()
         }
 
@@ -139,6 +150,8 @@ class StartClimbFragment : Fragment(), SensorEventListener {
                 fallCount++
             }
             //fall count${fallCount}
+
+            or_square.text = "Sensor Value: ${fallCount}"
             square.text = "${fallCount/80}"
         }
     }
