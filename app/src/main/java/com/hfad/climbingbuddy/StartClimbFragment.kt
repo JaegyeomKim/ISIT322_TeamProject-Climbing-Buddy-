@@ -57,7 +57,6 @@ class StartClimbFragment : Fragment(), SensorEventListener {
 
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        setUpSensorStuff()
 
 
         val homeButton = view.findViewById<Button>(R.id.homeButton1)
@@ -76,15 +75,18 @@ class StartClimbFragment : Fragment(), SensorEventListener {
         }
 
         startButton.setOnClickListener {
-
             if (!running) {
                 setBaseTime()
                 TimeStart.start()
                 running = true
             }
+            setUpSensorStuff()
+
+
         }
 
         stopButton.setOnClickListener {
+
             if (running) {
                 TimeStart.stop()
                 running = false
@@ -97,6 +99,7 @@ class StartClimbFragment : Fragment(), SensorEventListener {
 
 
         resetButton.setOnClickListener {
+            fallCount = 0
             offset = 0
             setBaseTime()
         }
@@ -132,7 +135,7 @@ class StartClimbFragment : Fragment(), SensorEventListener {
             val sides = event.values[0]
             val upDown = event.values[1]
 
-            if (upDown < 13) {
+            if (upDown < 13 && running == true) {
                 fallCount++
             }
             //fall count${fallCount}
@@ -146,6 +149,4 @@ class StartClimbFragment : Fragment(), SensorEventListener {
         sensorManager.unregisterListener(this)
         super.onDestroy()
     }
-
-
 }
