@@ -100,12 +100,17 @@ class StartClimbFragment : Fragment(), SensorEventListener {
         }
 
         saveButton.setOnClickListener {
+
             if (running) {
                 TimeStart.stop()
                 running = false
             }
             viewModel.AddTimeSpend()
             saveOffset()
+
+            view.findNavController()
+                .navigate(R.id.action_startClimbFragment_to_homeFragment)
+
         }
 
 
