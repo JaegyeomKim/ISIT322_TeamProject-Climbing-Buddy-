@@ -42,7 +42,6 @@ class SearchAreaFragment : Fragment() {
         val areaView = view.findViewById<TextView>(R.id.AreaView)
 
 
-
         val myArray = ArrayList<String>()
         lifecycleScope.launchWhenResumed {
             val response = apolloClient().query(MyQuery()).execute()

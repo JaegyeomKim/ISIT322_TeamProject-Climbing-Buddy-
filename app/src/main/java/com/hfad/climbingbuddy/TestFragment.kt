@@ -10,6 +10,16 @@ import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.hfad.climbingbuddy.databinding.FragmentTestBinding
 
+import android.annotation.SuppressLint
+import android.graphics.Color
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
+import androidx.appcompat.app.AppCompatDelegate
+
+
+
 class TestFragment : Fragment() {
 
     private var _binding: FragmentTestBinding? = null

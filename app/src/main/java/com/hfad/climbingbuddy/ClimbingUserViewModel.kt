@@ -2,6 +2,7 @@ package com.hfad.climbingbuddy
 import android.os.Build
 import android.util.Log
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.*
 import androidx.room.Room
@@ -13,12 +14,15 @@ import java.time.LocalDateTime
 
 var myID = 0
 
+
 class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
+
     var newTimeSpend = ""
     var newNumFalls = ""
     var newTimeStamp = ""
     var newUUID = "0"
     var areaName = ""
+    var sensor = ""
 
     @RequiresApi(Build.VERSION_CODES.O)
     val time = LocalDateTime.now().toString()
@@ -90,7 +94,7 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
     fun AddTimeSpend() {
         viewModelScope.launch {
             Thread {
-                dao.updateTest(newTimeStamp,time, myID)
+                dao.updateTest(newTimeStamp,time,sensor, myID)
             }.start()
         }
     }
