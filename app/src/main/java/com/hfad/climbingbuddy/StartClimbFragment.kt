@@ -87,8 +87,6 @@ class StartClimbFragment : Fragment(), SensorEventListener {
                 running = true
             }
             setUpSensorStuff()
-
-
         }
 
         stopButton.setOnClickListener {
@@ -110,7 +108,6 @@ class StartClimbFragment : Fragment(), SensorEventListener {
 
             view.findNavController()
                 .navigate(R.id.action_startClimbFragment_to_homeFragment)
-
         }
 
 
@@ -151,7 +148,7 @@ class StartClimbFragment : Fragment(), SensorEventListener {
             val sides = event.values[0]
             val upDown = event.values[1]
 
-            if (upDown < 13 && running == true) {
+            if (upDown > 13 && running == true) {
                 fallCount++
             }
             //fall count${fallCount}
