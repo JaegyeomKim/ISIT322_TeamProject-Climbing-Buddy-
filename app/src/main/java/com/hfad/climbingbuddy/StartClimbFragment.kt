@@ -148,7 +148,7 @@ class StartClimbFragment : Fragment(), SensorEventListener {
             val sides = event.values[0]
             val upDown = event.values[1]
 
-            if (upDown > 13 && running == true) {
+            if (upDown < 13 && running == true) {
                 fallCount++
             }
             //fall count${fallCount}

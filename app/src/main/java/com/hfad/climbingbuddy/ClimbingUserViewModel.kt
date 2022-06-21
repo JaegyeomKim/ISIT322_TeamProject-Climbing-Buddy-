@@ -25,6 +25,7 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
     var newUUID = "0"
     var areaName = ""
     var sensor = ""
+    var userSearch = ""
 
     @RequiresApi(Build.VERSION_CODES.O)
     val time = LocalDateTime.now().toString()
@@ -75,13 +76,12 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
 
 
             var newUUIDFromQuery = ""
-            for (i in 0..25){
-                if(response.data?.areas?.elementAt(i)?.area_name.toString() == areaName){
+            for (i in 0..15){
+                if(response.data?.areas?.elementAt(i)?.area_name.toString() == userSearch){
                     newUUIDFromQuery = response.data?.areas?.elementAt(i)?.uuid.toString()
                     break
                 }
             }
-//            var r = response.data?.areas?.elementAt(10)?.uuid.toString()
 
             val climbing = ClimbingUser()
             climbing.timeSpend = newTimeSpend

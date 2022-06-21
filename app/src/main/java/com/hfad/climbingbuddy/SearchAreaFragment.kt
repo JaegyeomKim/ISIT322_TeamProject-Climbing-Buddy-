@@ -38,17 +38,69 @@ class SearchAreaFragment : Fragment() {
             this, viewModelFactory).get(ClimbingUserViewModel::class.java)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-
         val areaView = view.findViewById<TextView>(R.id.AreaView)
+
+        val AreaViewList = view.findViewById<TextView>(R.id.AreaViewList)
+        val searchButton = view.findViewById<Button>(R.id.search_button)
+        val userInput = view.findViewById<TextView>(R.id.userInputArea)
 
         val myArray = ArrayList<String>()
         lifecycleScope.launchWhenResumed {
             val response = apolloClient().query(MyQuery()).execute()
-            for (i in 1..20){
+            for (i in 0..15){
                 val r = response.data?.areas?.elementAt(i)?.area_name.toString()
                 myArray.add(r)
             }
-            areaView.text = myArray[(0..25).random()]
+            areaView.text = "Ready to search!"
+        }
+
+
+        searchButton.setOnClickListener {
+            AreaViewList.setText("")
+
+            var input= userInput.text.toString()
+            var inputLength= userInput.text.toString().length
+
+            var check = true
+            for (i in 0..15){
+
+                if (myArray[i].length < inputLength) {
+                    inputLength = myArray[i].length
+                }
+
+                for (j in 0..inputLength-1){
+                    if (input.get(j) == myArray[i].get(j)){
+
+                    }
+                    else{
+                        check = false
+                    }
+                }
+                if (check){
+                    AreaViewList.append(myArray[i])
+                    AreaViewList.append("\n");
+                }
+                check = true
+            }
+
+        }
+
+        var mycheck = false
+        val confirmButton = view.findViewById<Button>(R.id.confirm_button)
+        confirmButton.setOnClickListener {
+            var input= userInput.text.toString()
+
+            for (i in 0..15){
+                if(input == myArray[i]){
+                    mycheck = true
+                    viewModel.createDBAndAddUUID()
+                    areaView.text = "Saved"
+                }
+            }
+
+            if(mycheck == false){
+                areaView.text = "Sorry, Can't find the area name."
+            }
         }
 
         val homeButton = view.findViewById<Button>(R.id.homeButton8)
