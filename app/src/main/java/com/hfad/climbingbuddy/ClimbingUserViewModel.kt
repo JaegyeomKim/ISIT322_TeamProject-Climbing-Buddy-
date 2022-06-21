@@ -74,8 +74,6 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
     fun createDBAndAddUUID() {
         viewModelScope.launch {
             val response = apolloClient().query(MyQuery()).execute()
-            val response2 = apolloClient().query(ourAreaName()).execute()
-
 
             var newUUIDFromQuery = ""
             for (i in 0..25){
@@ -98,6 +96,7 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
 
     fun ourTest() {
         viewModelScope.launch {
+            val response2 = apolloClient().query(MyQuery2()).execute()
 
         }
     }

@@ -1,4 +1,4 @@
-query ourAreaName {
+query MyQuery2 {
     areas(filter: {area_name: {exactMatch: true, match: "US"}}) {
         uuid
         area_name
