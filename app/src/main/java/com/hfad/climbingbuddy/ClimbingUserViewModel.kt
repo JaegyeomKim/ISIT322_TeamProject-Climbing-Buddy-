@@ -25,6 +25,8 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
     var newUUID = "0"
     var areaName = ""
     var sensor = ""
+    var userSearch = ""
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     val time = LocalDateTime.now().toString()
@@ -72,6 +74,7 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
     fun createDBAndAddUUID() {
         viewModelScope.launch {
             val response = apolloClient().query(MyQuery()).execute()
+            val response2 = apolloClient().query(ourAreaName()).execute()
 
 
             var newUUIDFromQuery = ""
@@ -91,6 +94,16 @@ class ClimbingUserViewModel(val dao: ClimbingUserDao) : ViewModel() {
             dao.insert(climbing)
         }
     }
+
+
+    fun ourTest() {
+        viewModelScope.launch {
+
+        }
+    }
+
+
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun AddTimeSpend() {

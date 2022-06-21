@@ -1,4 +1,4 @@
-query QueryByExactAreaName {
+query ourAreaName {
     areas(filter: {area_name: {exactMatch: true, match: "US"}}) {
         uuid
         area_name
