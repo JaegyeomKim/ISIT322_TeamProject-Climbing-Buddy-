@@ -78,7 +78,7 @@ class SearchAreaFragment : Fragment() {
                 }
                 if (check){
                     AreaViewList.append(myArray[i])
-                    AreaViewList.append("\n");
+                    AreaViewList.append("\n")
                 }
                 check = true
             }
